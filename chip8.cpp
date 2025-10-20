@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cstdint>
 #include <array>
+#include <cstring>
+
 #include "raylib.h"
 
 const uint8_t F { 0xF };
@@ -84,13 +86,13 @@ void Chip8::initialiseChip8() {
     };
 
     // initialise memory
-    memset(&memory, 0, MEMORY_SIZE);
+    std::memset(&memory, 0, MEMORY_SIZE);
 
     // init stack
-    memset(&stack, 0, STACK_SIZE);
+    std::memset(&stack, 0, STACK_SIZE);
 
     // init registers
-    memset(&registers, 0, REGISTER_SIZE);
+    std::memset(&registers, 0, REGISTER_SIZE);
 
     // init fontset
     for (int i = 0; i < FONTSET_SIZE; i++) {
